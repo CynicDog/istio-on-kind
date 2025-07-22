@@ -1,10 +1,10 @@
 # Envoy & xDS APIs in Istio (Quick Overview)
 
-## 🧭 What is Envoy?
+## What is Envoy?
 [Envoy](https://www.envoyproxy.io/) is a high-performance, cloud-native proxy used for managing network traffic. It's commonly used as a **sidecar proxy** in service meshes like **Istio** to handle routing, load balancing, telemetry, and security.
 
 
-## 📡 Dynamic Configuration with xDS APIs
+## Dynamic Configuration with xDS APIs
 
 Instead of loading all settings from static YAML files, **Envoy supports dynamic configuration** through a set of APIs known collectively as **xDS**:
 
@@ -15,19 +15,19 @@ Instead of loading all settings from static YAML files, **Envoy supports dynamic
 - **SDS** (Secret Discovery Service): TLS certificates
 - **ADS** (Aggregate Discovery Service): A single gRPC stream combining all of the above, to ensure ordering and consistency
 
-> 💡 These APIs let Envoy update its config **at runtime** with **no restarts**.
+> These APIs let Envoy update its config **at runtime** with **no restarts**.
 
-## 🧠 How Istio Uses xDS
+## How Istio Uses xDS
 
 In Istio, the control plane component called **Pilot** generates the configurations (LDS, RDS, CDS, etc.) for all Envoy proxies.
 
-### ✅ How it works:
+### How it works:
 1. Each Envoy sidecar starts up with a minimal **bootstrap config**
 2. It connects to **Pilot** over gRPC at port `15010`
 3. Envoy receives its full dynamic config using **ADS**
 4. Config updates (e.g., new services, routes, certs) are pushed automatically
 
-## 🔧 Example: Bootstrap Config in Istio
+## Example: Bootstrap Config in Istio
 
 ```yaml
 dynamicResources:
@@ -54,14 +54,14 @@ staticResources:
 
 > This tells Envoy to connect to Pilot (`istio-pilot.istio-system:15010`) and fetch all config via **ADS**.
 
-## 🧪 Why this is powerful
+## Why this is powerful
 
 * Centralized config management
 * Live updates without restarting services
 * Scalable to thousands of proxies
 * Secure communication with automatic cert rotation (via SDS)
 
-## 🔗 Related Links
+## Related Links
 
 * [Envoy xDS API Overview](https://www.envoyproxy.io/docs/envoy/latest/api-docs/xds_protocol)
 * [Istio Architecture](https://istio.io/latest/docs/architecture/)
