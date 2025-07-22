@@ -22,7 +22,8 @@ kubectl apply -f .\istio-1.26.2\samples\addons
 >
 > Run the following commands each in a separate terminal, or use background processes/scripts to run them in parallel:
 > ```bash
-> kubectl port-forward -n istio-system service/kiali 20001:20001
-> kubectl port-forward -n istio-system service/grafana 3000:3000
-> kubectl port-forward -n istio-system service/prometheus 9090:9090
+> istioctl dashboard jaeger
+> istioctl dashboard kiali 
+> istioctl dashboard grafana
+> istioctl dashboard prometheus
 > ```
