@@ -2,7 +2,7 @@
 
 ## With `docker-desktop` Kubernetes cluster distribution 
 
-#### 1. Set Kubernetes context as `docker-desktop`  
+#### 1. Set Kubernetes context as `docker-desktop` 
 ```bash
 kubectl config set-context docker-desktop  
 ```
