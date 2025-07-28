@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pokeapi.v1;
+
+import "pokemon/v1/types.proto";
+
+service PokedexService {
+  rpc GetPokemon(GetPokemonRequest) returns (GetPokemonResponse);
+}
+
+message GetPokemonRequest {
+  string name = 1;
+}
+
+message GetPokemonResponse {
+  Pokemon pokemon = 1;
+}
+
+message Pokemon {
+  pokemon.v1.Pokemon pokemon = 1;
+}
