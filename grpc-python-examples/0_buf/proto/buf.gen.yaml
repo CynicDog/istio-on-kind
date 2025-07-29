@@ -6,3 +6,6 @@ plugins:
   - remote: buf.build/protocolbuffers/pyi
     out: ./gen
     include_imports: true
+  - remote: buf.build/grpc/python:v1.74.0
+    out: gen
+    include_imports: true
