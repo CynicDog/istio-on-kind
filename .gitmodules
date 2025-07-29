@@ -1,0 +1,3 @@
+[submodule "istio-in-action"]
+	path = istio-in-action
+	url = https://github.com/istioinaction/book-source-code.git
