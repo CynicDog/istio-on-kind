@@ -4,10 +4,6 @@ import time
 
 # Import generated protobuf classes here
 from envoy.service.discovery.v3 import ads_pb2_grpc, ads_pb2
-from envoy.config.listener.v3 import listener_pb2
-from envoy.config.route.v3 import route_pb2
-from envoy.config.cluster.v3 import cluster_pb2
-from envoy.config.endpoint.v3 import endpoint_pb2
 from google.protobuf import any_pb2
 
 class SimpleADS(ads_pb2_grpc.AggregatedDiscoveryServiceServicer):
