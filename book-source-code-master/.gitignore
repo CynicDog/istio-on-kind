@@ -1,9 +1,0 @@
-.DS_Store
-target
-**/.idea
-*.iml
-*.log
-.classpath
-.project
-.settings
-**/node_modules
