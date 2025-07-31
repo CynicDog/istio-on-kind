@@ -10,3 +10,6 @@
 [submodule "elixir-grpc"]
 	path = elixir-grpc
 	url = https://github.com/elixir-grpc/grpc.git
+[submodule "logs-and-telemetry-using-fluent-bit"]
+	path = logs-and-telemetry-using-fluent-bit
+	url = https://github.com/mp3monster/Logs-and-Telemetry--Using-Fluent-Bit.git
